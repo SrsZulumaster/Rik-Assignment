@@ -15,12 +15,72 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Silver\source\repos\Rik-Assignment\Rik-Assignment
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Silver/source/repos/Rik-Assignment/Rik-Assignment/Pages/CompanyParticipant/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29tcGFueVBhcnRpY2lwYW50XENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Silver/source/repos/Rik-Assignment/Rik-Assignment/Pages/CompanyParticipant/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29tcGFueVBhcnRpY2lwYW50XERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Silver/source/repos/Rik-Assignment/Rik-Assignment/Pages/CompanyParticipant/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29tcGFueVBhcnRpY2lwYW50XERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Silver/source/repos/Rik-Assignment/Rik-Assignment/Pages/CompanyParticipant/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29tcGFueVBhcnRpY2lwYW50XEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Silver/source/repos/Rik-Assignment/Rik-Assignment/Pages/CompanyParticipant/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29tcGFueVBhcnRpY2lwYW50XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Silver/source/repos/Rik-Assignment/Rik-Assignment/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Silver/source/repos/Rik-Assignment/Rik-Assignment/Pages/Event/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXZlbnRcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Silver/source/repos/Rik-Assignment/Rik-Assignment/Pages/Event/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXZlbnRcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Silver/source/repos/Rik-Assignment/Rik-Assignment/Pages/Event/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXZlbnRcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Silver/source/repos/Rik-Assignment/Rik-Assignment/Pages/Event/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXZlbnRcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Silver/source/repos/Rik-Assignment/Rik-Assignment/Pages/Event/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXZlbnRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Silver/source/repos/Rik-Assignment/Rik-Assignment/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Silver/source/repos/Rik-Assignment/Rik-Assignment/Pages/Participant/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFydGljaXBhbnRcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Silver/source/repos/Rik-Assignment/Rik-Assignment/Pages/Participant/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFydGljaXBhbnRcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Silver/source/repos/Rik-Assignment/Rik-Assignment/Pages/Participant/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFydGljaXBhbnRcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Silver/source/repos/Rik-Assignment/Rik-Assignment/Pages/Participant/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFydGljaXBhbnRcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Silver/source/repos/Rik-Assignment/Rik-Assignment/Pages/Participant/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFydGljaXBhbnRcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Silver/source/repos/Rik-Assignment/Rik-Assignment/Pages/Privacy.cshtml]

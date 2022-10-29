@@ -1,0 +1,55 @@
+﻿@page
+@model Rik_Assignment.Pages.Event.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>EventModel</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.EventModel.EventName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.EventModel.EventName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.EventModel.EventDescription)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.EventModel.EventDescription)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.EventModel.EventLocation)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.EventModel.EventLocation)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.EventModel.EventDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.EventModel.EventDate)
+        </dd>
+    </dl>
+</div>
+<div class="form-check">
+    <input class="form-check-input" type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+    <label class="form-check-label" for="optionsRadios1">
+        Option one is this and that—be sure to include why it's great
+    </label>
+</div>
+<div class="form-check">
+    <input class="form-check-input" type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+    <label class="form-check-label" for="optionsRadios2">
+        Option two can be something else and selecting it will deselect option one
+    </label>
+    </div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.EventModel?.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
