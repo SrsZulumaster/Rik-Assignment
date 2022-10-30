@@ -23,6 +23,9 @@
                 @Html.DisplayNameFor(model => model.CompanyParticipantModel[0].PaymentMethod)
             </th>
             <th>
+                @Html.DisplayNameFor(model=> model.CompanyParticipantModel[0].EventRefID)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.CompanyParticipantModel[0].Description)
             </th>
             <th></th>
@@ -40,6 +43,9 @@
             <td>
                 @Html.DisplayFor(modelItem => item.PaymentMethod)
             </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EventRefID)
+                </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Description)
             </td>

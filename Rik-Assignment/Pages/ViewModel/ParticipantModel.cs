@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Rik_Assignment.Pages.ViewModel
 {
@@ -18,6 +19,9 @@ namespace Rik_Assignment.Pages.ViewModel
         public string PaymentMethod { get; set; }
         [MaxLength(1500)]
         public string? Description { get; set; }
-        public EventModel? EventID { get; set; }
+
+        public int? EventRefID { get; set; }
+        [ForeignKey("EventRefID")]
+        public EventModel? EventModel { get; set; }
     }
 }

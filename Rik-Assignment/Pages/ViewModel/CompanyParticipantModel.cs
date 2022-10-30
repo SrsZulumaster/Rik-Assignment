@@ -18,8 +18,10 @@ namespace Rik_Assignment.Pages.ViewModel
         public int ParticipantAmount { get; set; }
         [Required]
         public string PaymentMethod { get; set; }
-        [MaxLength(1500)]
+        [MaxLength(5000)]
         public string? Description { get; set; }
-        public EventModel? EventID { get; set; }
+        public int? EventRefID { get; set; }
+        [ForeignKey("EventRefID")]
+        public EventModel? EventModel { get; set; }
     }
 }

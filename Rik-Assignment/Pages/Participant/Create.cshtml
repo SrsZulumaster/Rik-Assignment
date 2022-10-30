@@ -1,6 +1,7 @@
 ﻿@page
 @model Rik_Assignment.Pages.Participant.CreateModel
 
+
 @{
     ViewData["Title"] = "Create";
 }
@@ -12,24 +13,27 @@
 <div class="row">
     <div class="col-md-4">
         <form method="post">
+            @RouteData.Values["{id:int}"]
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @(ViewContext.RouteData.Values["parameterName"])
+            <input type="hidden" asp-for="ParticipantModel.EventRefID" />
             <div class="form-group">
-                <label asp-for="ParticipantModel.FirstName" class="control-label"></label>
+                <label asp-for="ParticipantModel.FirstName" class="control-label">Eesnimi</label>
                 <input asp-for="ParticipantModel.FirstName" class="form-control" />
                 <span asp-validation-for="ParticipantModel.FirstName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ParticipantModel.LastName" class="control-label"></label>
+                <label asp-for="ParticipantModel.LastName" class="control-label">Perekonnanimi</label>
                 <input asp-for="ParticipantModel.LastName" class="form-control" />
                 <span asp-validation-for="ParticipantModel.LastName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ParticipantModel.PersonalID" class="control-label"></label>
+                <label asp-for="ParticipantModel.PersonalID" class="control-label">Isikukood</label>
                 <input asp-for="ParticipantModel.PersonalID" class="form-control" />
                 <span asp-validation-for="ParticipantModel.PersonalID" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ParticipantModel.PaymentMethod" class="form-label">State</label>
+                <label asp-for="ParticipantModel.PaymentMethod" class="form-label">Makseviis</label>
                 <span asp-validation-for="ParticipantModel.PaymentMethod" class="text-danger"></span>
                 <select class="form-select" asp-for="ParticipantModel.PaymentMethod" required>
                     <option selected disabled value="">Makseviis</option>
@@ -37,8 +41,9 @@
                     <option>Pangaülekanne</option>
                 </select>
             </div>
+            
             <div class="form-group">
-                <label asp-for="ParticipantModel.Description" class="control-label"></label>
+                <label asp-for="ParticipantModel.Description" class="control-label">Lisainfo</label>
                 <input asp-for="ParticipantModel.Description" class="form-control" />
                 <span asp-validation-for="ParticipantModel.Description" class="text-danger"></span>
             </div>

@@ -10,6 +10,57 @@
 <p>
     <a asp-page="Create">Create New</a>
 </p>
+<div>
+    <h4>Tulevased üritused</h4>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.EventModel[0].EventName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EventModel[0].EventDescription)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EventModel[0].EventLocation)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EventModel[0].EventDate)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.EventModel)
+            {@if (item.EventDate > DateTime.Now)
+                {
+
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EventName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EventDescription)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EventLocation)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EventDate)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
+<div class="container">
+    <h4>Toimunud üritused</h4>
 <table class="table">
     <thead>
         <tr>
@@ -28,27 +79,33 @@
             <th></th>
         </tr>
     </thead>
+
     <tbody>
-@foreach (var item in Model.EventModel) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.EventName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EventDescription)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EventLocation)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EventDate)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model.EventModel)
+        {@if (item.EventDate < DateTime.Now)
+            {
+
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EventName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EventDescription)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EventLocation)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EventDate)
+                    </td>
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                        <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        }
     </tbody>
 </table>
+</div>

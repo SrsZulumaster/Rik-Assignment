@@ -15,6 +15,8 @@ namespace Rik_Assignment.Pages.ViewModel
         [Required]
         public DateTime EventDate { get; set; }
 
+        public ICollection<ParticipantModel>? Participant { get; set; }
+        public ICollection<CompanyParticipantModel>? Company { get; set; }
 
     }
 }
