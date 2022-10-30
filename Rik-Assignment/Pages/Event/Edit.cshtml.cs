@@ -23,6 +23,7 @@ namespace Rik_Assignment.Pages.Event
         [BindProperty]
         public EventModel EventModel { get; set; } = default!;
 
+
         public async Task<IActionResult> OnGetAsync(int? id)
         {
             if (id == null || _context.EventModel == null)

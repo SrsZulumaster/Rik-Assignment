@@ -1,10 +1,130 @@
 ﻿@page
-@model IndexModel
+@model Rik_Assignment.Pages.Event.IndexModel
+
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Üritused";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<h1>Üritused</h1>
+
+<section class="bg-primary">
+    <div class="container">
+        <div class="row align-items-center">
+
+            <div class="col-lg-6 order-lg-1">
+                
+                <div class="p-5 ">
+                <p>Lorem ipsume mitsuibakt kaitm ahigla njgfi</p>
+                
+                </div>
+            </div>
+            <div class="col-lg-6 order-lg-2">
+            <div class="p-5">
+                <img class="img-fluid" src="~/css/Images/pilt.jpg" />
+            </div>    
+            </div>
+        </div>
+    </div>
+</section>
+<div class="row">
+<div class="col-md-6 p-5">
+        <h4 class="bg-primary">Tulevased üritused</h4>
+    <div class="table-responsive">
+    <table class="table table-borderless bg-white text-dark">
+        <thead>
+            <tr>
+                <th>
+                    Ürituse nimi
+                </th>
+                <th>
+                    Kirjeldus
+                </th>
+                <th>
+                    Asukoht
+                </th>
+                <th>
+                    Toimumisaeg
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.EventModel)
+            {@if (item.EventDate > DateTime.Now)
+                {
+
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EventName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EventDescription)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EventLocation)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EventDate)
+                </td>
+                <td>
+                    <a asp-page="Event/Edit" asp-route-id="@item.Id">Muuda</a> |
+                    <a asp-page="Event/Details" asp-route-id="@item.Id">Vaata</a> |
+                    <a asp-page="Event/Delete" asp-route-id="@item.Id">Kustuta</a>
+                </td>
+            </tr>
+                }
+            }
+        </tbody>
+    </table>
+        </div>
+    </div>
+    <div class="col-md-6 p-5">
+    <h4 class="bg-primary">Toimunud üritused</h4>
+    <div class="table-responsive">
+<table class="table table-borderless bg-white text-dark ">
+    <thead>
+        <tr>
+            <th>
+                Ürituse nimi
+            </th>
+            <th>
+                Kirjeldus
+            </th>
+            <th>
+                Asukoht
+            </th>
+            <th>
+                Toimumisaeg
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model.EventModel)
+        {@if (item.EventDate < DateTime.Now)
+            {
+
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EventName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EventDescription)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EventLocation)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EventDate)
+                    </td>
+                    <td>
+                        <a asp-page="./Details" asp-route-id="@item.Id">Vaata</a> 
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+        </div></div>
 </div>

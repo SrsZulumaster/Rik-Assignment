@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "EpJBO9pcxmufEyM8tMwpyMzH/Po7GyNlYZpvpCX3g+E=",
+  "Hash": "vuchBpIBVAoQzCQ5XINcQ1dIMs3sS6De0heiCaHCuVE=",
   "Source": "Rik-Assignment",
   "BasePath": "_content/Rik-Assignment",
   "Mode": "Default",
@@ -49,6 +49,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Silver\\source\\repos\\Rik-Assignment\\Rik-Assignment\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Rik-Assignment.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\Silver\\source\\repos\\Rik-Assignment\\Rik-Assignment\\wwwroot\\css\\Images\\libled.jpg",
+      "SourceId": "Rik-Assignment",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Silver\\source\\repos\\Rik-Assignment\\Rik-Assignment\\wwwroot\\",
+      "BasePath": "_content/Rik-Assignment",
+      "RelativePath": "css/Images/libled.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Images\\libled.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Silver\\source\\repos\\Rik-Assignment\\Rik-Assignment\\wwwroot\\css\\Images\\pilt.jpg",
+      "SourceId": "Rik-Assignment",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Silver\\source\\repos\\Rik-Assignment\\Rik-Assignment\\wwwroot\\",
+      "BasePath": "_content/Rik-Assignment",
+      "RelativePath": "css/Images/pilt.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Images\\pilt.jpg"
     },
     {
       "Identity": "C:\\Users\\Silver\\source\\repos\\Rik-Assignment\\Rik-Assignment\\wwwroot\\css\\site.css",

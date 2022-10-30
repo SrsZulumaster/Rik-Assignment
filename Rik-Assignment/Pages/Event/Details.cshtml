@@ -4,44 +4,118 @@
 @{
     ViewData["Title"] = "Details";
 }
+<section>
+<div class="container-fluid mb-5 d-inline-flex">
+        <div class="justify-content-between align-items-center mb-4">
+        <div class="d-inline-flex col-lg-4">
+        <h1 class="mb-0">Osalejad</h1>
+        </div>
+    </div>
+    </div>
+</section>
+<div class="col-lg-4 col-md-4 col-sm-4 container justify-content-center text-bg-primary">
 
-<h1>Details</h1>
-
-<div>
-    <h4>EventModel</h4>
     <hr />
     <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.EventModel.EventName)
+        <dt class="col-lg-12">
+            Ürituse nimi
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.EventModel.EventName)
         </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.EventModel.EventDescription)
+        <dt class="col-lg-12">
+            Kirjeldus
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.EventModel.EventDescription)
         </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.EventModel.EventLocation)
+        <dt class="col-lg-12">
+            Asukoht
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.EventModel.EventLocation)
         </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.EventModel.EventDate)
+        <dt class="col-lg-12">
+            Toimumiskuupäev
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.EventModel.EventDate)
         </dd>
     </dl>
+
+    @foreach (var item in Model.ParticipantModel)
+        @if (item.EventRefID == Model.EventModel.Id)
+        {
+            <h5>Osalejad</h5>
+            <h8>Eraisikud</h8>
+        <table class="table table-borderless">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                @Html.DisplayFor(modelItem =>item.FirstName)
+                @Html.DisplayFor(modelItem =>item.LastName)
+                        </td>
+                        <td>
+                @Html.DisplayFor(modelItem =>item.PersonalID)
+                        </td>
+                        <td>
+                <a class= "btn btn-success" asp-page="/Participant/Edit" asp-route-id="@item.Id">Muuda</a>
+                            <a class=" btn btn-danger" asp-page="/Participant/Delete" asp-route-id="@item.Id">Kustuta</a>
+                        </td>
+                        </tr>
+                        </tbody>
+                        </table>
+           
+        }
+
+    @foreach (var item in Model.CompanyParticipantModel)
+        @if (item.EventRefID == Model.EventModel.Id)
+        {
+            <h8>Firmad</h8>
+                <table class="table table-borderless">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                            <td>
+                            @Html.DisplayFor(modelItem =>item.CompanyName)
+                            </td>
+                            <td>
+                            @Html.DisplayFor(modelItem=> item.CompanyID)
+                            </td>
+                            <td>
+                            <a class="btn btn-success " asp-page="/CompanyParticipant/Edit" asp-route-id="@item.Id">Muuda</a>
+                            <a class="btn btn-danger" asp-page="/CompanyParticipant/Delete" asp-route-id="@item.Id">Kustuta</a>
+                            </td>
+                     </tr>
+                </tbody>
+                </table>
+            
+        }
+
+    @if (Model.EventModel.EventDate > DateTime.Now)
+    {
+        <p>
+            <a asp-page="/Participant/Create" asp-route-id="@Model.EventModel.Id">Lisa uus osaleja</a>
+            <a asp-page="/CompanyParticipant/Create" asp-route-id="@Model.EventModel.Id">Osale firmaga</a>
+        </p>
+        <div>
+            <a asp-page="./Edit" asp-route-id="@Model.EventModel?.Id">Muuda üritust</a>
+        </div>
+    }
 </div>
-<p>
-    <a asp-page="/Participant/Create" asp-route-id="@Model.EventModel.Id">Lisa uus osaleja</a>
-    <a asp-page="/CompanyParticipant/Create" asp-route-id="@Model.EventModel.Id">Osale firmaga</a>
-</p>
 <div>
-    <a asp-page="./Edit" asp-route-id="@Model.EventModel?.Id">Edit</a> |
-    <a asp-page="./Index">Back to List</a>
+    <a href="##" onClick="history.go(-1); return false;"> Tagasi</a>
 </div>

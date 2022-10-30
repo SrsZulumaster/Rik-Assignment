@@ -20,14 +20,18 @@ namespace Rik_Assignment.Pages.Event
         }
 
       public EventModel EventModel { get; set; }
+        public IList<ParticipantModel> ParticipantModel { get; set; } = default!;
+        public IList<CompanyParticipantModel> CompanyParticipantModel { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null || _context.EventModel == null)
+
+            if (id == null || _context.EventModel == null || _context.ParticipantModel == null || _context.CompanyParticipantModel == null)
             {
                 return NotFound();
             }
-
+            var companyparticipantModel = await _context.CompanyParticipantModel.FirstOrDefaultAsync(m=> m.Id ==id);
+            var participantModel = await _context.ParticipantModel.FirstOrDefaultAsync(m => m.Id == id);
             var eventmodel = await _context.EventModel.FirstOrDefaultAsync(m => m.Id == id);
             if (eventmodel == null)
             {
@@ -35,6 +39,8 @@ namespace Rik_Assignment.Pages.Event
             }
             else 
             {
+                ParticipantModel = await _context.ParticipantModel.ToListAsync();
+                CompanyParticipantModel = await _context.CompanyParticipantModel.ToListAsync();
                 EventModel = eventmodel;
             }
             return Page();
