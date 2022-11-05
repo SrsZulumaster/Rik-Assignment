@@ -26,7 +26,10 @@ namespace Rik_Assignment.Pages.CompanyParticipant
 
         [BindProperty]
         public CompanyParticipantModel CompanyParticipantModel { get; set; }
-        
+        public EventModel EventModel { get; set; }
+
+        [BindProperty(SupportsGet = true)]
+        public int id { get; set; }
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
@@ -35,11 +38,11 @@ namespace Rik_Assignment.Pages.CompanyParticipant
             {
                 return Page();
             }
-
+            CompanyParticipantModel.EventRefID = id;
             _context.CompanyParticipantModel.Add(CompanyParticipantModel);
             await _context.SaveChangesAsync();
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("/Index");
         }
     }
 }

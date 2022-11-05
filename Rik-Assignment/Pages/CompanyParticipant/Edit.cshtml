@@ -5,45 +5,55 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
-
-<h4>CompanyParticipantModel</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
+<section class="container  bg-white">
+    <div class="bg-primary mt-2">
+        <p class="h1">Firma info</p>
+    </div>
+    <div class="container col-4 text-dark">
+        <h4>Uus Osavõtja</h4>
+        <div class=" container row col-12">
+            <div class="">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="CompanyParticipantModel.Id" />
             <div class="form-group">
-                <label asp-for="CompanyParticipantModel.CompanyName" class="control-label"></label>
+                <label asp-for="CompanyParticipantModel.CompanyName" class="control-label">Firma nimi:</label>
                 <input asp-for="CompanyParticipantModel.CompanyName" class="form-control" />
                 <span asp-validation-for="CompanyParticipantModel.CompanyName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="CompanyParticipantModel.CompanyID" class="control-label"></label>
+                <label asp-for="CompanyParticipantModel.CompanyID" class="control-label">Ettevõtte reg.kood:</label>
                 <input asp-for="CompanyParticipantModel.CompanyID" class="form-control" />
                 <span asp-validation-for="CompanyParticipantModel.CompanyID" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="CompanyParticipantModel.PaymentMethod" class="control-label"></label>
-                <input asp-for="CompanyParticipantModel.PaymentMethod" class="form-control" />
-                <span asp-validation-for="CompanyParticipantModel.PaymentMethod" class="text-danger"></span>
+                <label asp-for="CompanyParticipantModel.ParticipantAmount" class="control-label">Osalejate arv:</label>
+                <input asp-for="CompanyParticipantModel.ParticipantAmount" class="form-control" />
+                <span asp-validation-for="CompanyParticipantModel.ParticipantAmount" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="CompanyParticipantModel.Description" class="control-label"></label>
-                <input asp-for="CompanyParticipantModel.Description" class="form-control" />
+                <label asp-for="CompanyParticipantModel.PaymentMethod" class="form-label">Makseviis:</label>
+                <span asp-validation-for="CompanyParticipantModel.PaymentMethod" class="text-danger"></span>
+                <select class="form-select" asp-for="CompanyParticipantModel.PaymentMethod" required>
+                    <option selected disabled value="">Makseviis</option>
+                    <option>Sularaha</option>
+                    <option>Pangaülekanne</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="CompanyParticipantModel.Description" class="control-label">Lisainfo:</label>
+                <textarea asp-for="CompanyParticipantModel.Description" class="form-control" ></textarea>
                 <span asp-validation-for="CompanyParticipantModel.Description" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <a class="btn btn-outline-dark btn-light" asp-area="" asp-page="/Index"> Tagasi</a>
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>
+            </div>
+        </div>
     </div>
-</div>
-
-<div>
-    <a asp-page="./Index">Back to List</a>
-</div>
+</section>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

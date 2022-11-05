@@ -19,15 +19,21 @@ namespace Rik_Assignment.Pages.Event
             _context = context;
         }
 
+        // Sets up the EventModel, list of Participants and list of Companies taking part
       public EventModel EventModel { get; set; }
+        public IList<ParticipantModel> ParticipantModel { get; set; }
+        public IList<CompanyParticipantModel> CompanyParticipantModel { get; set; }
 
+
+        // When Page loads checks if any of the Models are null
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null || _context.EventModel == null)
+
+            if (id == null || _context.EventModel == null || _context.ParticipantModel == null || _context.CompanyParticipantModel == null)
             {
                 return NotFound();
             }
-
+            // Loads the Event model and displays it and all the participants
             var eventmodel = await _context.EventModel.FirstOrDefaultAsync(m => m.Id == id);
             if (eventmodel == null)
             {
@@ -35,6 +41,8 @@ namespace Rik_Assignment.Pages.Event
             }
             else 
             {
+                ParticipantModel = await _context.ParticipantModel.ToListAsync();
+                CompanyParticipantModel = await _context.CompanyParticipantModel.ToListAsync();
                 EventModel = eventmodel;
             }
             return Page();

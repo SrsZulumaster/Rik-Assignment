@@ -66,7 +66,7 @@ namespace Rik_Assignment.Pages.CompanyParticipant
                 }
             }
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("/Index");
         }
 
         private bool CompanyParticipantModelExists(int id)
