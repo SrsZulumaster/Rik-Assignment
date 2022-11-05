@@ -4,47 +4,45 @@
 @{
     ViewData["Title"] = "Edit";
 }
+<section class="container  bg-white">
+<div class="bg-primary mt-2">
+    <p class="h1">Ürituse Muutmine</p>
+</div>
+<div class="container col-4 text-dark">
+    <h1>Muuda üritust</h1>
+<div class=" container row col-12">
 
-<h1>Edit</h1>
-
-<h4>EventModel</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="EventModel.Id" />
             <div class="form-group">
-                <label asp-for="EventModel.EventName" class="control-label"></label>
+                <label asp-for="EventModel.EventName" class="control-label">Ürituse nimi:</label>
                 <input asp-for="EventModel.EventName" class="form-control" />
                 <span asp-validation-for="EventModel.EventName" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="EventModel.EventDescription" class="control-label"></label>
-                <input asp-for="EventModel.EventDescription" class="form-control" />
-                <span asp-validation-for="EventModel.EventDescription" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="EventModel.EventLocation" class="control-label"></label>
+                <label asp-for="EventModel.EventLocation" class="control-label">Toimumiskoht:</label>
                 <input asp-for="EventModel.EventLocation" class="form-control" />
                 <span asp-validation-for="EventModel.EventLocation" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="EventModel.EventDate" class="control-label"></label>
+                <label asp-for="EventModel.EventDate" class="control-label">Toimumisaeg:</label>
                 <input asp-for="EventModel.EventDate" class="form-control" />
                 <span asp-validation-for="EventModel.EventDate" class="text-danger"></span>
             </div>
+                        <div class="form-group">
+                <label asp-for="EventModel.EventDescription" class="control-label">Lisainfo:</label>
+                <textarea asp-for="EventModel.EventDescription" class="form-control"></textarea>
+                <span asp-validation-for="EventModel.EventDescription" class="text-danger"></span>
+            </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <a class="btn btn-outline-dark btn-light" asp-area="" asp-page="/Index"> Tagasi</a>
+                <input type="submit" value="Salvesta" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
-
-<div>
-    <a href="##" onClick="history.go(-1); return false;"> Tagasi</a>
-</div>
-
+</section>
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

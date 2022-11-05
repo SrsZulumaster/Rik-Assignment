@@ -8,13 +8,13 @@ namespace Rik_Assignment.Pages.ViewModel
         public int Id { get; set; }
         [Required]
         public string EventName { get; set; }
-        [Required]
-        public string EventDescription { get; set; }
+        
+        public string? EventDescription { get; set; }
         [Required]
         public string EventLocation { get; set; }
-        [Required]
+        [Required, DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}")]
         public DateTime EventDate { get; set; }
-
+        
         public ICollection<ParticipantModel>? Participant { get; set; }
         public ICollection<CompanyParticipantModel>? Company { get; set; }
 

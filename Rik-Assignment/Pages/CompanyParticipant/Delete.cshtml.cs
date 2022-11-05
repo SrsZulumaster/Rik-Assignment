@@ -57,7 +57,7 @@ namespace Rik_Assignment.Pages.CompanyParticipant
                 await _context.SaveChangesAsync();
             }
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("/Index");
         }
     }
 }

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Rik_Assignment.Data;
 
@@ -11,9 +12,10 @@ using Rik_Assignment.Data;
 namespace Rik_Assignment.Migrations
 {
     [DbContext(typeof(Rik_AssignmentContext))]
-    partial class Rik_AssignmentContextModelSnapshot : ModelSnapshot
+    [Migration("20221105082333_fifthmig")]
+    partial class fifthmig
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

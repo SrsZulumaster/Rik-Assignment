@@ -39,7 +39,7 @@ namespace Rik_Assignment.Pages.Event
             _context.EventModel.Add(EventModel);
             await _context.SaveChangesAsync();
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("/Index");
         }
     }
 }

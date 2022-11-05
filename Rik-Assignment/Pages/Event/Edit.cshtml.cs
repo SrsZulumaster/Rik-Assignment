@@ -67,7 +67,7 @@ namespace Rik_Assignment.Pages.Event
                 }
             }
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("/Index");
         }
 
         private bool EventModelExists(int id)

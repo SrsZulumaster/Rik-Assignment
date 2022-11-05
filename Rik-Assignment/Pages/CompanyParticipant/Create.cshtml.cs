@@ -42,7 +42,7 @@ namespace Rik_Assignment.Pages.CompanyParticipant
             _context.CompanyParticipantModel.Add(CompanyParticipantModel);
             await _context.SaveChangesAsync();
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("/Index");
         }
     }
 }

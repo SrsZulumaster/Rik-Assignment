@@ -21,15 +21,21 @@ namespace Rik_Assignment.Pages.Event
 
         [BindProperty]
       public EventModel EventModel { get; set; }
+        public CompanyParticipantModel CompanyParticipantModel { get; set; }
+        public ParticipantModel ParticipantModel { get; set; }
 
+        [BindProperty(SupportsGet = true)]
+        public int Id { get; set; }
+
+        
         public async Task<IActionResult> OnGetAsync(int? id)
         {
             if (id == null || _context.EventModel == null)
             {
                 return NotFound();
             }
-
-            var eventmodel = await _context.EventModel.FirstOrDefaultAsync(m => m.Id == id);
+            var eventmodel = await _context.EventModel.Where(c => c.Id == id).Include(c => c.Company).Include(c => c.Participant).SingleOrDefaultAsync();
+            
 
             if (eventmodel == null)
             {
@@ -48,8 +54,8 @@ namespace Rik_Assignment.Pages.Event
             {
                 return NotFound();
             }
-            var eventmodel = await _context.EventModel.FindAsync(id);
 
+            var eventmodel = await _context.EventModel.Where(c => c.Id == id).Include(c => c.Company).Include(c => c.Participant).SingleOrDefaultAsync();
             if (eventmodel != null)
             {
                 EventModel = eventmodel;
@@ -57,7 +63,7 @@ namespace Rik_Assignment.Pages.Event
                 await _context.SaveChangesAsync();
             }
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("/Index");
         }
     }
 }

@@ -66,7 +66,7 @@ namespace Rik_Assignment.Pages.Participant
                 }
             }
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("/Index");
         }
 
         private bool ParticipantModelExists(int id)

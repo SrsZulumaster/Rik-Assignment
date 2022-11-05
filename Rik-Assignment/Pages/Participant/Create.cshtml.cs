@@ -49,7 +49,7 @@ namespace Rik_Assignment.Pages.Participant
             _context.ParticipantModel.Add(ParticipantModel);
             await _context.SaveChangesAsync();
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("/Index");
         }
     }
 }
