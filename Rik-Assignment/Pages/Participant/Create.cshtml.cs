@@ -45,6 +45,7 @@ namespace Rik_Assignment.Pages.Participant
             {
                 return Page();
             }
+
             ParticipantModel.EventRefID = id;
             _context.ParticipantModel.Add(ParticipantModel);
             await _context.SaveChangesAsync();

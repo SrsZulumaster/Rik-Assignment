@@ -12,6 +12,7 @@ namespace Rik_Assignment.Pages.Event
 {
     public class IndexModel : PageModel
     {
+        // Assigns DataBase Context to _context
         private readonly Rik_Assignment.Data.Rik_AssignmentContext _context;
 
         public IndexModel(Rik_Assignment.Data.Rik_AssignmentContext context)
@@ -19,8 +20,12 @@ namespace Rik_Assignment.Pages.Event
             _context = context;
         }
 
+        // Makes a List of EventModel called "EventModel" 
         public IList<EventModel> EventModel { get;set; } = default!;
 
+
+        // When Page Loads gets EventModel from database and sends it to the frontend
+        // So it can be referenced in CSHTML file
         public async Task OnGetAsync()
         {
             if (_context.EventModel != null)

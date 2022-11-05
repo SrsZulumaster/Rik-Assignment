@@ -26,7 +26,7 @@ namespace Rik_Assignment.Pages.Event
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null || _context.EventModel == null)
+            if (id == null || _context.EventModel == null )
             {
                 return NotFound();
             }
@@ -36,21 +36,25 @@ namespace Rik_Assignment.Pages.Event
             {
                 return NotFound();
             }
+            if (eventmodel.EventDate < DateTime.Now)
+            {
+                return RedirectToPage("/Index");
+            }
             EventModel = eventmodel;
             return Page();
         }
 
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see https://aka.ms/RazorPagesCRUD.
+
         public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid)
             {
                 return Page();
             }
-
+            // Attaches the updated State to EventModel
             _context.Attach(EventModel).State = EntityState.Modified;
 
+            // Checks if there is an Event with this ID and saves the changes to the Database
             try
             {
                 await _context.SaveChangesAsync();
@@ -69,7 +73,7 @@ namespace Rik_Assignment.Pages.Event
 
             return RedirectToPage("/Index");
         }
-
+        // retruns True if there is any eventModel with given id
         private bool EventModelExists(int id)
         {
           return _context.EventModel.Any(e => e.Id == id);

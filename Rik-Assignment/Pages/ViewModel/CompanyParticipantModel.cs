@@ -20,6 +20,8 @@ namespace Rik_Assignment.Pages.ViewModel
         public string PaymentMethod { get; set; }
         [MaxLength(5000)]
         public string? Description { get; set; }
+
+        // Sets the EventRefId to Foreing key
         public int? EventRefID { get; set; }
         [ForeignKey("EventRefID")]
         public EventModel? EventModel { get; set; }

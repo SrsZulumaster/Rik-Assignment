@@ -39,8 +39,6 @@
             @Html.DisplayFor(model => model.EventModel.EventDate)
         </dd>
     </dl>
-
-
             <h5>Osavõtjad</h5>
             <h8>Eraisikud</h8>
         <table class="table table-borderless text-dark">
@@ -78,9 +76,6 @@
                     }
                         </tbody>
                         </table>
-           
-        
-
     @foreach (var item in Model.CompanyParticipantModel)
         @if (item.EventRefID == Model.EventModel.Id)
         {

@@ -5,6 +5,8 @@ VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rik-Assignment", "Rik-Assignment\Rik-Assignment.csproj", "{85682477-8A54-44BA-9BCB-6B0758C62FF0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rik-Assignment.Tests", "Rik-Assignment.Tests\Rik-Assignment.Tests.csproj", "{C1C9DD92-F34D-4711-B061-F7341F219883}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{85682477-8A54-44BA-9BCB-6B0758C62FF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{85682477-8A54-44BA-9BCB-6B0758C62FF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{85682477-8A54-44BA-9BCB-6B0758C62FF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1C9DD92-F34D-4711-B061-F7341F219883}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1C9DD92-F34D-4711-B061-F7341F219883}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1C9DD92-F34D-4711-B061-F7341F219883}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1C9DD92-F34D-4711-B061-F7341F219883}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

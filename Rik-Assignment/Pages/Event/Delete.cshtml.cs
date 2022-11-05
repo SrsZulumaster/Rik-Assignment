@@ -35,7 +35,7 @@ namespace Rik_Assignment.Pages.Event
                 return NotFound();
             }
             var eventmodel = await _context.EventModel.Where(c => c.Id == id).Include(c => c.Company).Include(c => c.Participant).SingleOrDefaultAsync();
-            
+
 
             if (eventmodel == null)
             {
@@ -54,7 +54,7 @@ namespace Rik_Assignment.Pages.Event
             {
                 return NotFound();
             }
-
+            // Needed to Cascade Delete - This will also delete all the participants of the Event
             var eventmodel = await _context.EventModel.Where(c => c.Id == id).Include(c => c.Company).Include(c => c.Participant).SingleOrDefaultAsync();
             if (eventmodel != null)
             {

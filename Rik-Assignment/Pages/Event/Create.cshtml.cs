@@ -23,7 +23,7 @@ namespace Rik_Assignment.Pages.Event
         {
             return Page();
         }
-
+        // Captures the information from the page and binds it to EventModel
         [BindProperty]
         public EventModel EventModel { get; set; }
         
@@ -31,9 +31,11 @@ namespace Rik_Assignment.Pages.Event
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
+            // Checks if Values captured from the page are Correct according to ViewModel.EventModel
+            // Does not check validity of nullable values
           if (!ModelState.IsValid)
             {
-                return Page();
+                return BadRequest(ModelState);
             }
 
             _context.EventModel.Add(EventModel);
