@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Rik_Assignment.Data;
 using Rik_Assignment.Pages.ViewModel;
 
-namespace Rik_Assignment.Pages.Event
+namespace Rik_Assignment.Pages.Payment
 {
     public class CreateModel : PageModel
     {
@@ -18,30 +18,28 @@ namespace Rik_Assignment.Pages.Event
         {
             _context = context;
         }
-        
+
         public IActionResult OnGet()
         {
             return Page();
         }
-        // Captures the information from the page and binds it to EventModel
+
         [BindProperty]
-        public EventModel EventModel { get; set; }
+        public PaymentModel PaymentModel { get; set; }
         
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
-            // Checks if Values captured from the page are Correct according to ViewModel.EventModel
-            // Does not check validity of nullable values
           if (!ModelState.IsValid)
             {
-                return BadRequest(ModelState);
+                return Page();
             }
 
-            _context.EventModel.Add(EventModel);
+            _context.PaymentModel.Add(PaymentModel);
             await _context.SaveChangesAsync();
 
-            return RedirectToPage("/Index");
+            return RedirectToPage("./Index");
         }
     }
 }

@@ -7,10 +7,10 @@
 }
 <section class="container  bg-white">
     <div class="bg-primary mt-2">
-        <p class="h1">Osavõtja Lisamine</p>
+        <p class="h1 text-light">Osavõtja Lisamine</p>
     </div>
 <div class="container col-4 text-dark">
-            <h4>Uus Osavõtja</h4>
+            <h4 class="text-light">Uus Osavõtja</h4>
             <div class=" container row col-12">
                 <div class="">
         <form method="post">
@@ -38,8 +38,13 @@
                 <span asp-validation-for="ParticipantModel.PaymentMethod" class="text-danger"></span>
                 <select class="form-select" asp-for="ParticipantModel.PaymentMethod" required>
                     <option selected disabled value="">Makseviis</option>
-                    <option>Sularaha</option>
-                    <option>Pangaülekanne</option>
+                            <option>Sularaha</option>
+                            <option>Pangaülekanne</option>
+                               @foreach (var item in Model.PaymentModel)
+                               {
+                                <option>@Html.DisplayTextFor(modelItem =>item.PaymentName)</option>
+                            }
+
                 </select>
             </div>
             

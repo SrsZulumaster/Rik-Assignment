@@ -27,25 +27,29 @@ namespace Rik_Assignment.Pages.Participant
         public ParticipantModel ParticipantModel { get; set; }
 
         public EventModel   EventModel { get; set; }
+        public IList<PaymentModel> PaymentModel { get; set; } = default!;
 
         [BindProperty(SupportsGet =true)]
         public int id { get; set; }
-        public void OnGet()
+        public async Task OnGetAsync()
         {
-
+            if (_context.PaymentModel != null)
+            {
+                PaymentModel = await _context.PaymentModel.ToListAsync();
+            }
         }
 
 
-        
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
-          if (!ModelState.IsValid)
+
+
+            if (!ModelState.IsValid)
             {
                 return Page();
             }
-
             ParticipantModel.EventRefID = id;
             _context.ParticipantModel.Add(ParticipantModel);
             await _context.SaveChangesAsync();

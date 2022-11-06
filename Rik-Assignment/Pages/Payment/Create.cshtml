@@ -1,0 +1,32 @@
+﻿@page
+@model Rik_Assignment.Pages.Payment.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+<section class="container  bg-white">
+    <div class="bg-primary mt-2">
+        <p class="h1 text-light">Makseviisi Lisamine</p>
+    </div>
+    <div class="container col-4 text-dark">
+        <h4 class="text-light">Uus Makseviis</h4>
+        <div class=" container row col-12">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="PaymentModel.PaymentName" class="control-label"></label>
+                <input asp-for="PaymentModel.PaymentName" class="form-control" />
+                <span asp-validation-for="PaymentModel.PaymentName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+</section>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -19,5 +19,7 @@ namespace Rik_Assignment.Data
         public DbSet<Rik_Assignment.Pages.ViewModel.ParticipantModel> ParticipantModel { get; set; }
 
         public DbSet<Rik_Assignment.Pages.ViewModel.CompanyParticipantModel> CompanyParticipantModel { get; set; }
+
+        public DbSet<Rik_Assignment.Pages.ViewModel.PaymentModel> PaymentModel { get; set; }
     }
 }

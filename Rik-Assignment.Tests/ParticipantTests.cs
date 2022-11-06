@@ -29,7 +29,7 @@ namespace Rik_Assignment.Tests
             var pageModel = new CreateModel(_context);
 
 
-            var result = pageModel.OnGet;
+            var result = pageModel.OnGetAsync;
 
 
             Assert.IsType<Action>(result);
@@ -53,7 +53,7 @@ namespace Rik_Assignment.Tests
             var pageModel = new CreateModel(_context);
 
 
-            var result = pageModel.OnGet;
+            var result = pageModel.OnGetAsync;
 
 
             Assert.IsAssignableFrom<Action>(result);

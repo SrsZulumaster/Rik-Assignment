@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using Rik_Assignment.Data;
 using Rik_Assignment.Pages.ViewModel;
 
@@ -18,12 +19,14 @@ namespace Rik_Assignment.Pages.CompanyParticipant
         {
             _context = context;
         }
-
-        public IActionResult OnGet()
+        public IList<PaymentModel> PaymentModel { get; set; } = default!;
+        public async Task OnGetAsync()
         {
-            return Page();
+            if (_context.PaymentModel != null)
+            {
+                PaymentModel = await _context.PaymentModel.ToListAsync();
+            }
         }
-
         [BindProperty]
         public CompanyParticipantModel CompanyParticipantModel { get; set; }
         public EventModel EventModel { get; set; }

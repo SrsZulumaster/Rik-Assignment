@@ -1,0 +1,34 @@
+﻿@page
+@model Rik_Assignment.Pages.Payment.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Makseviisid</h1>
+
+<p>
+    <a class="btn btn-primary" asp-page="Create">Uus makseviis</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+               Makseviis
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.PaymentModel) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PaymentName)
+            </td>
+            <td>
+                <a class="btn btn-danger" asp-page="./Delete" asp-route-id="@item.Id">Kustuta</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -23,13 +23,17 @@ namespace Rik_Assignment.Pages.Participant
         [BindProperty]
         public ParticipantModel ParticipantModel { get; set; } = default!;
 
+        public IList<PaymentModel> PaymentModel { get; set; } = default!;
         public async Task<IActionResult> OnGetAsync(int? id)
         {
             if (id == null || _context.ParticipantModel == null)
             {
                 return NotFound();
             }
-
+            if (_context.PaymentModel != null)
+            {
+                PaymentModel = await _context.PaymentModel.ToListAsync();
+            }
             var participantmodel =  await _context.ParticipantModel.FirstOrDefaultAsync(m => m.Id == id);
             if (participantmodel == null)
             {

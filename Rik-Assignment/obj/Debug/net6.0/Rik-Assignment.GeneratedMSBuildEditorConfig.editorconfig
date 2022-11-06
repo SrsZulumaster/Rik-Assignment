@@ -71,6 +71,18 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFydGljaXBhbnRcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Silver/source/repos/Rik-Assignment/Rik-Assignment/Pages/Payment/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGF5bWVudFxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Silver/source/repos/Rik-Assignment/Rik-Assignment/Pages/Payment/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGF5bWVudFxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Silver/source/repos/Rik-Assignment/Rik-Assignment/Pages/Payment/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGF5bWVudFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Silver/source/repos/Rik-Assignment/Rik-Assignment/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

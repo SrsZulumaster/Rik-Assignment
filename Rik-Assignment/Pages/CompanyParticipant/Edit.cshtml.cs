@@ -22,14 +22,17 @@ namespace Rik_Assignment.Pages.CompanyParticipant
 
         [BindProperty]
         public CompanyParticipantModel CompanyParticipantModel { get; set; } = default!;
-
+        public IList<PaymentModel> PaymentModel { get; set; } = default!;
         public async Task<IActionResult> OnGetAsync(int? id)
         {
             if (id == null || _context.CompanyParticipantModel == null)
             {
                 return NotFound();
             }
-
+            if (_context.PaymentModel != null)
+            {
+                PaymentModel = await _context.PaymentModel.ToListAsync();
+            }
             var companyparticipantmodel =  await _context.CompanyParticipantModel.FirstOrDefaultAsync(m => m.Id == id);
             if (companyparticipantmodel == null)
             {
